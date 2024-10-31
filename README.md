@@ -2,10 +2,7 @@
 
 ![Fuga](https://github.com/user-attachments/assets/1c05199d-8895-42ad-8edb-f46069982a0d)
 
-
-
-
-Welcome to **Fuga**—a powerful, yet easy-to-use Svelte component library focused on **performance** and **developer experience**! 🚀 
+Welcome to **Fuga**—a powerful, yet easy-to-use Svelte component library focused on **performance** and **developer experience**! 🚀
 
 With Fuga, styling is a breeze, with the freedom to add CSS directly through props without ever touching CSS files. Everything compiles to native CSS, leveraging **Sass** under the hood for a smooth, efficient experience. Plus, Fuga's fully-typed code provides a seamless integration with TypeScript, empowering developers with IntelliSense for a polished workflow! 🌟
 
@@ -28,7 +25,7 @@ With Fuga, styling is a breeze, with the freedom to add CSS directly through pro
 Get started by installing Fuga via npm:
 
 ```bash
-npm install fuga
+npm install sass && npm install fuga
 ```
 
 ## 💡 Usage
@@ -37,18 +34,18 @@ Here’s a sneak peek of what your Fuga-powered Svelte code can look like:
 
 ```svelte
 <script>
-  import { Box } from 'fuga';
+	import { Box } from 'fuga';
 </script>
 
-<Box 
-  as="button"
-  px="8"
-  py="4"
-  p="20px" 
-  bgColor={{ base: "blue-100", md: "blue-400", lg: "blue-500" }}
-  _hover={{ color: "blue-300" }}
+<Box
+	as="button"
+	px="8"
+	py="4"
+	p="20px"
+	bgColor={{ base: 'blue-100', md: 'blue-400', lg: 'blue-500' }}
+	_hover={{ color: 'blue-300' }}
 >
-  Click Me
+	Click Me
 </Box>
 ```
 
@@ -61,7 +58,7 @@ Soon, Fuga will feature a wide range of components such as:
 - **Button**
 - **Accordion**
 - **Alert**
-- **Badge**  
+- **Badge**
 - and many more! Stay tuned for these additions and make Fuga your go-to library for Svelte components.
 
 ---
@@ -74,10 +71,10 @@ No setup is required to start using Fuga! For custom setups or additional config
 
 ## ❤️ Community & Contributions
 
-Contributions are welcome! Help us grow Fuga by reporting issues, submitting pull requests, or just sharing feedback. 
+Contributions are welcome! Help us grow Fuga by reporting issues, submitting pull requests, or just sharing feedback.
 
 ---
 
-Bring your Svelte projects to life with **Fuga** – The powerful yet developer-friendly component library. 
+Bring your Svelte projects to life with **Fuga** – The powerful yet developer-friendly component library.
 
 ---
