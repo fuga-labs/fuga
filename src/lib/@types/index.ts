@@ -1,12 +1,20 @@
-import type { Snippet } from "svelte";
-import type { GlobalCSSProperties } from "./globalcssproperties.js";
-import type { GlobalHtmlElements } from "./globalhtmlelements.js";
+import type { Snippet } from 'svelte';
+import type { BasePropsType, cssPropsType, pseudoType } from './types.js';
 
+type PseudoDict<T extends pseudoType, U> = {
+	[K in T]: U;
+};
 
-type ComponentPropsType = Partial<GlobalCSSProperties> & Partial<GlobalHtmlElements> & {
-    children: Snippet
+type PseudoUtlity<T> = PseudoDict<pseudoType, T> | T | (string & {});
 
-}
+type WrapperComponentPropsType =
+	| (Partial<BasePropsType> &
+			Partial<{
+				children: Snippet;
+			}> &
+			Partial<PseudoUtlity<Partial<BasePropsType>>>)
+	| HTMLElement;
 
+type ComponentPropsType = Partial<BasePropsType> & Record<string, string>;
 
-export type { ComponentPropsType, GlobalCSSProperties }
+export type { WrapperComponentPropsType, cssPropsType, ComponentPropsType };

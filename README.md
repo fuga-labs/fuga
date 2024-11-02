@@ -18,14 +18,16 @@ With Fuga, styling is a breeze, with the freedom to add CSS directly through pro
 
 ✨ **Sass Internally Compiled:** No need to worry about adding extra CSS files! Just set your props, and Fuga takes care of the rest with Sass-powered compiling.
 
+✨ **Zod for Runtime Type Checking:** Fuga integrates **Zod** for runtime validation, enhancing type safety by catching errors during development and ensuring consistent, reliable component behavior.
+
 ---
 
 ## 🌈 Installation
 
-Get started by installing Fuga via npm:
+Get started by installing Fuga and its dependencies:
 
 ```bash
-npm install sass && npm install fuga
+npm install sass zod && npm install fuga
 ```
 
 ## 💡 Usage
@@ -44,12 +46,13 @@ Here’s a sneak peek of what your Fuga-powered Svelte code can look like:
 	p="20px"
 	bgColor={{ base: 'blue-100', md: 'blue-400', lg: 'blue-500' }}
 	_hover={{ color: 'blue-300' }}
+	onclick={() => console.log('clicked!!')}
 >
 	Click Me
 </Box>
 ```
 
-With Fuga, styles are passed as props that automatically compile into CSS! This example shows how easy it is to add responsive, interactive styling without touching a CSS file. ✨
+With Fuga, styles are passed as props that automatically compile into CSS! This example shows how easy it is to add responsive, interactive styling without touching a CSS file. ✨ Zod handles the runtime validation of these props, catching issues right in the browser console to keep your code predictable and error-free.
 
 ## 🔍 What’s Next?
 
@@ -65,7 +68,7 @@ Soon, Fuga will feature a wide range of components such as:
 
 ## 🛠️ Configuration
 
-No setup is required to start using Fuga! For custom setups or additional configurations, simply check out our [documentation](#) (coming soon!) for guidance on advanced usage, including theming, animations, and responsive props. It's still in early phase.
+No setup is required to start using Fuga! For custom setups or additional configurations, simply check out our [documentation](#) (coming soon!) for guidance on advanced usage, including theming, animations, and responsive props.
 
 ---
 
