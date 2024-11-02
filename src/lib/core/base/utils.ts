@@ -1,8 +1,27 @@
-import type { GlobalCSSProperties } from '$lib/@types/index.js';
+import type { cssPropsType } from '$lib/@types/index.js';
 
 import { compileString } from 'sass';
 import { ExcludedProps, mixins } from './const.js';
 import { combineMap } from '$lib/@types/maps.js';
+import { cssSchema } from '../schema/cssSchema.js';
+
+type PropsType = { [key: string]: unknown };
+function separateCssProps(props: PropsType) {
+	const cssProps: PropsType = {};
+	const otherProps: PropsType = {};
+
+	let csskeys = cssSchema.keyof()._def.values as string[];
+	// Separate props based on validation by cssSchema
+	for (const key in props) {
+		if (csskeys.includes(key) || key.includes('_')) {
+			cssProps[key] = props[key];
+		} else {
+			otherProps[key] = props[key];
+		}
+	}
+
+	return { cssProps, otherProps };
+}
 
 function extractValues(value: string): string {
 	return combineMap[value] || value;
@@ -42,7 +61,7 @@ function transformIntoCsskey(key: string) {
 	return output_key;
 }
 
-function generateStyles(cssProps: Partial<GlobalCSSProperties>) {
+function generateStyles(cssProps: Partial<cssPropsType>) {
 	let style: Record<string, unknown> = {};
 	let mediastr = '';
 	let pseudostr = '';
@@ -92,7 +111,7 @@ function createHash(date: number) {
 	return 'fuga-' + Number(date).toString(36);
 }
 
-function generateSCSS<T extends Partial<GlobalCSSProperties>>(cssProps: T, tag: unknown) {
+function generateSCSS<T extends Partial<cssPropsType>>(cssProps: T, tag: unknown) {
 	let style = generateStyles(cssProps);
 	let hash = createHash(Date.now());
 
@@ -106,4 +125,4 @@ function generateSCSS<T extends Partial<GlobalCSSProperties>>(cssProps: T, tag: 
 	};
 }
 
-export { generateSCSS };
+export { generateSCSS, separateCssProps };
