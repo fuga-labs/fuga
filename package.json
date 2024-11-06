@@ -1,6 +1,6 @@
 {
 	"name": "fuga",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"private": false,
 	"keywords": [
 		"svelte",
@@ -9,6 +9,7 @@
 		"scss",
 		"sveltekit"
 	],
+	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
