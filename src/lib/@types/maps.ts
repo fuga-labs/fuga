@@ -1,6 +1,7 @@
-import type { Colors, LongCSSProps, Sizes } from './types.js';
+import { extendedProps } from '$lib/core/schema/extendedSchema.js';
+import type { LongCSSProps } from './types.js';
 
-const ColorMap: Record<Colors, string> = {
+const ColorMap: Record<string, string> = {
 	'red-50': '#FEF2F2',
 	'red-100': '#FEE2E2',
 	'red-200': '#FECACA',
@@ -84,7 +85,7 @@ const CSSPropsMap: Record<string, keyof LongCSSProps> = {
 	p: 'padding'
 } as const;
 
-const SizeMap: Record<Sizes, string> = {
+const SizeMap: Record<string, string> = {
 	'1': '0.2rem',
 	'2': '0.4rem',
 	'3': '0.6rem',
@@ -144,5 +145,6 @@ const SizeMap: Record<Sizes, string> = {
 export let combineMap: Record<string, string> = {
 	...ColorMap,
 	...CSSPropsMap,
-	...SizeMap
+	...SizeMap,
+	...extendedProps
 } as const;

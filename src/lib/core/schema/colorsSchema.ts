@@ -1,5 +1,6 @@
 import * as z from 'zod';
 import { fallbackSchema } from './utilsSchema.js';
+import { extendColorsSchema } from './extendedSchema.js';
 
 const roseSchema = z.enum([
 	'rose-50',
@@ -80,6 +81,8 @@ const blueSchema = z.enum([
 	'blue-950'
 ]);
 
+let extendschema = extendColorsSchema();
+
 export const colorsSchema = z.union([
 	roseSchema,
 	redSchema,
@@ -87,5 +90,6 @@ export const colorsSchema = z.union([
 	yellowSchema,
 	greenSchema,
 	blueSchema,
-	fallbackSchema
+	fallbackSchema,
+	extendschema
 ]);

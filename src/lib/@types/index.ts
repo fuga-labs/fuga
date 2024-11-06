@@ -9,12 +9,10 @@ type PseudoUtlity<T> = PseudoDict<pseudoType, T> | T | (string & {});
 
 type WrapperComponentPropsType =
 	| (Partial<BasePropsType> &
-			Partial<{
-				children: Snippet;
-			}> &
+			Partial<{ children: Snippet }> &
 			Partial<PseudoUtlity<Partial<BasePropsType>>>)
 	| HTMLElement;
 
-type ComponentPropsType = Partial<BasePropsType> & Record<string, string>;
+type ComponentPropsType = Partial<BasePropsType> & Record<string, unknown>;
 
 export type { WrapperComponentPropsType, cssPropsType, ComponentPropsType };

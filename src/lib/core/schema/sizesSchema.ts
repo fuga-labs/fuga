@@ -1,5 +1,6 @@
 import * as z from 'zod';
 import { fallbackSchema } from './utilsSchema.js';
+import { extendsizesSchema } from './extendedSchema.js';
 
 const sizesEnum = z.enum([
 	'1',
@@ -58,4 +59,5 @@ const sizesEnum = z.enum([
 	'11/12'
 ]);
 
-export const sizesSchema = z.union([sizesEnum, fallbackSchema]);
+let extendSchema = extendsizesSchema();
+export const sizesSchema = z.union([sizesEnum, fallbackSchema, extendSchema]);

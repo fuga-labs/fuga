@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { WrapperComponentPropsType } from '$lib/@types/index.js';
-	import Base from '$lib/core/base/base.svelte';
 	let props: WrapperComponentPropsType = $props();
+	import Base from '$lib/core/base/base.svelte';
 </script>
 
 <Base {...props}></Base>

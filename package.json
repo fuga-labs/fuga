@@ -1,6 +1,6 @@
 {
 	"name": "fuga",
-	"version": "2.0.1",
+	"version": "2.1.1",
 	"private": false,
 	"keywords": [
 		"svelte",
@@ -58,7 +58,6 @@
 		"prettier": "^3.3.2",
 		"prettier-plugin-svelte": "^3.2.6",
 		"publint": "^0.2.0",
-		"standard-version": "^9.5.0",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"svelte-preprocess": "^6.0.3",
